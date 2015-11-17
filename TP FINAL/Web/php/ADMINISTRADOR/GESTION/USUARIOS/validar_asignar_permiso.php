@@ -26,7 +26,17 @@
 	$cod_rol = $fila1["codigo"];
 	$id_permiso = $fila2["id"];
 	
-	$insertar_permiso = mysql_query ("insert into dar_permiso(id_permiso,codigo_rol)
-											values('".$id_permiso."','".$cod_rol."');") or die (mysql_error());
+    $consulta_id= mysql_query(" SELECT MAX( id_dp ) ID
+                                        FROM dar_permiso ") or die ("no query");
+                             
+			
+			$fila1 = mysql_fetch_assoc($consulta_id);
+			
+			$id_dp= $fila1["ID"];
+			
+			$id_dp +=1;
+	
+	$insertar_permiso = mysql_query ("insert into dar_permiso(id_permiso,codigo_rol,id_dp)
+											values('".$id_permiso."','".$cod_rol."','".$id_dp."');") or die (mysql_error());
 ?>
 
