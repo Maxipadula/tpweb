@@ -1,5 +1,12 @@
  <html>
-
+	 <?php include ("viajes_datos.php"); ?>
+	
+ 	<head>
+ 		<script type="text/javascript" src="../../../../js/funciones/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../../../../js/funciones/validarModificarUser1.js"></script>
+		<LINK REL="Stylesheet" HREF="../../css/login.css" TYPE="text/css">
+	</head>
+	
 	<?PHP
 				include ('../rutas.php');
 	
@@ -18,6 +25,8 @@
 	?>
  	FORMULARIO PARA TABLA VIAJES:
 	
+	<div id="divContenedor">
+	<div class="divTabla">
  	<form class='contacto' method="post" action="<?php echo $validar_datos_viaje ?>">
  		<div id="contacto">
  				</br>
@@ -28,8 +37,6 @@
  				</div>	
  				</br>
 			<?php	
- 				$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
-				mysql_select_db ("tpFinal",$conexion) or die ("no db");
 		
 				$consulta  = mysql_query ("SELECT id_usuario, nombre
 										  FROM usuario
@@ -55,9 +62,7 @@
  				</br>
 				
 				<?php	
- 				$conexion = mysql_connect("localhost:3306", "root","") or die("no conecta");
-				mysql_select_db ("tpFinal",$conexion) or die ("no db");
-		
+	
 				$consulta  = mysql_query ("SELECT t.id_transporte id, t.patente patente,M.descripcion marca,MO.descripcion modelo
 											FROM transporte T join 
 											     vehiculo V on V.id_vehiculo = T.id_vehiculo join
@@ -127,4 +132,6 @@
 	
 	<input type="submit" value="Atras" onclick = "location='viajes_datos.php'"/>
  
+ </div>
+ </diV>
  </html>

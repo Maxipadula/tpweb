@@ -1,6 +1,11 @@
 <html>
+
+
 	
  <?php include ("mecanicos_datos.php");?>
+ 
+	<div id="divContenedor">
+	<div class="divTabla">
 	<?php
 		
 		include ('../../../rutas.php');
@@ -17,7 +22,7 @@
 			echo "<table border = '1'> \n";
 			echo "<tr><td>Nombre y Apellido</td></tr> \n";
 			do{
-				echo "<tr><td>".$row["nombre"]."</td><td><a href='".$validar_eliminacion_mecanico."?ID=".$row["id_mecanico"]."' class = 'tabla'>Eliminar</a></td></tr> \n";     
+				echo "<tr><td>".$row["nombre"]."</td><td class='tBotonElim'><a href='".$validar_eliminacion_mecanico."?ID=".$row["id_mecanico"]."' class = 'tlink'>Eliminar</a></td></tr> \n";     
 			} while ($row = mysql_fetch_array ($consulta));
 			echo "</table> \n";
 		} else {
@@ -25,6 +30,7 @@
 		} 
 
 ?>
-	
+	</div>
+	</div>
 
 </html>

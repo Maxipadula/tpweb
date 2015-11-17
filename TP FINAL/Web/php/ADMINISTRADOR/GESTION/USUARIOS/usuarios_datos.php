@@ -9,7 +9,10 @@
 	
 		
 		<?php 
+		    
+			if(!isset($_SESSION)){
 			session_start();
+			}
 			include ("../../../rutas.php"); 
 		
 			$permiso = "gestion de usuarios";

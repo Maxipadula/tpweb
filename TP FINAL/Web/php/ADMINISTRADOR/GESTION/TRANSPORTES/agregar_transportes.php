@@ -37,7 +37,7 @@
             
             <p>AGREGAR TRANSPORTES:</p>
 
-            <form action="" class='contacto' id="transporte" method="post"
+            <form action="<?php echo $validar_datos_transportes ?>" class='contacto' id="transporte" method="post"
             name="transporte">
                 <div id="contacto">
                     <div>

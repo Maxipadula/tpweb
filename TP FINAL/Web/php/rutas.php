@@ -4,7 +4,7 @@
 	
 	$puerto = "localhost:3306";
 	$usuario = "root";
-	$password = "";
+	$password = "Unlm2015";
 	
 	/*VARIABLES RUTAS*/
 	$login = "login.php";
@@ -93,6 +93,7 @@
 			   $validar_modificacion_transportes = "validar_modificacion_transportes.php";
 			   $menu_modificacion_transporte ="menu_modificacion_transportes.php";
 			   $validar_eliminar_transporte ="validar_eliminar_transporte.php ";
+			   
 			   
 			  //gestion de mecanicos
 			   $mecanicos_datos ="MECANICOS/mecanicos_datos.php";

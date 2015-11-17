@@ -7,6 +7,7 @@
 	</head>
 <body>
 	<div id="divContenedor">
+	<div class="divTabla">
 		</br>
 		<p>SELECCIONAR USUARIO A MODIFICAR</p>
 
@@ -32,7 +33,7 @@
 			echo "<table border = '1'> \n";
 			echo "<tr><td>NOMBRE Y APELLIDO</td><td>USUARIO</td><td>CONTRASEÑA</td><td>FECHA DE NACIMIENTO</td><td>NUMERO DE DOCUMENTO</td><td>ROL</td></tr>     \n";
 			do{
-				echo "<tr><td>".$row["nombre"]."</td><td>".$row["usuario"]."</td><td>".$row["contra"]."</td><td>".$row["fecha"]."</td><td>".$row["numdoc"]."</td><td>".$row["rol"]."</td><td><a href='".$menu_modificacion_usuario."?ID=".$row["ID"]."' class = 'tabla'>Modificar</a></td></tr> \n";     
+				echo "<tr><td>".$row["nombre"]."</td><td>".$row["usuario"]."</td><td>".$row["contra"]."</td><td>".$row["fecha"]."</td><td>".$row["numdoc"]."</td><td>".$row["rol"]."</td><td class='tBotonModif'><a href='".$menu_modificacion_usuario."?ID=".$row["ID"]."' class = 'tlink'>Modificar</a></td></tr> \n";     
 			} while ($row = mysql_fetch_array ($consulta));
 			echo "</table> \n";
 			
@@ -43,6 +44,8 @@
 					
 		?>
 			
+		</div>
+	</div>
 	</div>
 </body>
 </html>

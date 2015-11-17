@@ -10,7 +10,7 @@
  	$client =$_POST ["cliente"]; 
  	$fecha_inic =$_POST ["fecha_inicio"]; 
  	$carg =$_POST ["carga"]; 
-	$cero="0";
+	$cero="null";
 	 
  		include ('../rutas.php');
 	
@@ -18,7 +18,7 @@
 	mysql_select_db ("tpFinal",$conexion) or die ("no db");
  	 
 	  $insert_usuario = mysql_query("insert into viaje (id_viaje, id_usuario, id_transporte, origen, km_recorridos, destino, cliente, fecha_inicio, fecha_fin, carga) 
- 									values ('".$id_viaj."','".$id_usua."','".$id_trnsp."','".$orig."','".$cero."','".$destin."','".$client."', '".$fecha_inic."','".$cero."', '".$carg."')  
+ 									values ('".$id_viaj."','".$id_usua."','".$id_trnsp."','".$orig."','0','".$destin."','".$client."', '".$fecha_inic."','0000-00-00 00:00:00', '".$carg."')  
  										    ;")or die (mysql_error()); 
 	 
 	 

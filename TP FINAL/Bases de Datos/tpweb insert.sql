@@ -13,7 +13,13 @@ values (1, 'DNI'),
        (7, 'Libreta Civica');
 
  /*select *
-from rol;*/  
+from transporte;*/  
+
+SELECT V.id_vehiculo ID
+										FROM vehiculo V join
+										     modelo MO on V.id_modelo = MO.id_modelo join
+											 marca MA on V.id_marca = MA.id_marca
+										WHERE MO.descripcion = 'HD 78'  and MA.descripcion ='Hyundai'
 
        
 insert into licencia (id_licencia, descripcion)
@@ -89,7 +95,8 @@ insert into dar_permiso(id_permiso,codigo_rol)
           
 
 /*select * 
-from permiso;*/
+from usuario
+;*/
 
 insert into usuario (id_usuario, usuario, nombre, pass, fecha_nacimiento, id_tipo_doc, num_doc, id_licencia, codigo_rol)
 values	(10, 'pato','Patricio Lombardia','1234asd','1965-10-23', 1, '302584789', 'NO',3),
@@ -193,8 +200,8 @@ values	(1122, 10,101, 2222, 'Buenos Aires', 10000, 'Florianopolis', 'Pedromania'
 		(5566, 30,0, 3333, 'Misiones', 4000, 'Montevideo','sisis', '2015-12-12 12:30:34', '2015-12-12 16:30:00','medias'),
 		(6677, 50,601, 4444, 'Mendoza',  8500, 'Asuncion','nadanada', '2015-07-06 12:00:20', '2015-07-06 20:40:29','buzos');
 
-/*select *
-from viaje; */
+select *
+from viaje; 
 
 insert into vale_combustible(id_vc,id_viaje,  fecha_hora, lugar, costo, cantidad)
 values (1,1122,'2015-06-05 15:11:25', 'Entre Rios', 5000.00, 250.00),   

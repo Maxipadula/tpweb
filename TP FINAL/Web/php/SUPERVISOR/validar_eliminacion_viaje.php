@@ -2,7 +2,7 @@
 	<?PHP
 	session_start() ;
 	
-	$id_eliminar_viaj =$_POST ["id_eliminar_viaje"];
+	$id_eliminar_viaj =$_GET ["ID"];
 	
 	
 		include ('../rutas.php');
