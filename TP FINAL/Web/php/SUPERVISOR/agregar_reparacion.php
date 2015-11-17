@@ -1,5 +1,5 @@
  <html>
-
+		 <?php include ("reparacion_datos.php"); ?>
 	<?PHP
 	include ('../rutas.php');
 	
@@ -16,7 +16,9 @@
 			
 			$codigo_reparacion +=1;
 	?>
- 	FORMULARIO PARA TABLA REPARACION:
+	<div id="divContenedor">
+	<div class="divTabla">
+ 	FORMULARIO PARA TABLA REPARACION
  	<form class='contacto' method="post" action="<?php echo $validar_datos_reparacion ?>">
  		<div id="contacto">
  				</br>
@@ -40,7 +42,9 @@
 						echo "<table border = '1'> \n";
 						echo "<tr><td>id_mecanico</td><td>Nombre y Apellido</td></tr> \n";
 						do{
-							echo "<tr><td>".$row["id_mecanico"]."</td><td>".$row["nombre"]."</td></tr> \n";     
+							echo "<tr><td>".$row["id_mecanico"]."</td><td>".$row["nombre"].
+							"</td><td class='tBotonAgregar'><a ?ID=".$row["id_mecanico"].
+							"' class = 'tlink'>Seleccionar</a></td></tr> \n";    
 						} while ($row = mysql_fetch_array ($consulta));
 						echo "</table> \n";
 					} else {
@@ -49,11 +53,12 @@
 
 				?>
 				<br>
- 				<div><label>ID MECANICO
+ 				<!--<div><label>ID MECANICO
  					</br>
  					<input type="text" name="id_mecanico">
  				</label>
  				</div>
+				-->
  				</br>
 				
 				<?php
@@ -69,7 +74,9 @@
 						echo "<table border = '1'> \n";
 						echo "<tr><td>id_transporte</td><td>estado</td><td>patente</td></tr> \n";
 						do{
-							echo "<tr><td>".$row["trans"]."</td><td>".$row["estado"]."</td><td>".$row["patente"]."</td></tr> \n";     
+							echo "<tr><td>".$row["trans"]."</td><td>".$row["estado"]."</td><td>".$row["patente"].
+							"</td><td class='tBotonAgregar'><a ?ID=".$row["trans"]
+				."' class = 'tlink'>Seleccionar</a></td></tr> \n";     
 						} while ($row = mysql_fetch_array ($consulta));
 						echo "</table> \n";
 					} else {
@@ -78,11 +85,13 @@
 
 				?>				
 				<br>
+				<!--
  				<div><label>ID TRANSPORTE
  					</br>
  					<input type="text" name="id_transporte">
  				</label>
  				</div>
+				-->
  				</br>
 				<?php
 					
@@ -97,7 +106,9 @@
 						echo "<table border = '1'> \n";
 						echo "<tr><td>id_orden</td><td>repuesto</td><td>costo</td><td>cantidad</td></tr> \n";
 						do{
-							echo "<tr><td>".$row["id_orden"]."</td><td>".$row["repuesto"]."</td><td>".$row["costo"]."</td><td>".$row["cantidad"]."</td></tr> \n";     
+							echo "<tr><td>".$row["id_orden"]."</td><td>".$row["repuesto"]."</td><td>".$row["costo"].
+							"</td><td>".$row["cantidad"]."</td><td class='tBotonAgregar'><a ?ID=".$row["id_orden"].
+							"' class = 'tlink'>Seleccionar</a></td></tr> \n";     
 						} while ($row = mysql_fetch_array ($consulta));
 						echo "</table> \n";
 					} else {
@@ -106,11 +117,13 @@
 
 				?>		
 				<br>
+				<!--
  				<div><label>ID ORDEN
  					</br>
  					<input type="text" name="id_orden">
  				</label>
  				</div>
+				-->
 				<br>
 				
  				<div><label>COSTO
@@ -129,10 +142,13 @@
 				
 							
 				<input type="submit" value="Agregar">
-				<br>
+				<input type="submit" value="Atras" onclick = "location='<?php echo $reparacion_datos?>'"/>
  		</div>
  	</form>
 	
-	<input type="submit" value="Atras" onclick = "location='<?php echo $reparacion_datos?>'"/>
+
  
+ 
+	</div>
+	</div>
  </html>

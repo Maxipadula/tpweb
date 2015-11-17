@@ -15,11 +15,12 @@ values (1, 'DNI'),
  /*select *
 from transporte;*/  
 
-SELECT V.id_vehiculo ID
+/*SELECT V.id_vehiculo ID
 										FROM vehiculo V join
 										     modelo MO on V.id_modelo = MO.id_modelo join
 											 marca MA on V.id_marca = MA.id_marca
-										WHERE MO.descripcion = 'HD 78'  and MA.descripcion ='Hyundai'
+										WHERE MO.descripcion = 'HD 78'  and MA.descripcion ='Hyundai';
+*/
 
        
 insert into licencia (id_licencia, descripcion)
@@ -182,14 +183,18 @@ from transporte;
 											   marca M on V.id_marca = M.id_marca inner join 
 											   modelo MO on V.id_modelo = MO.id_modelo*/
 
-insert into acoplado (id_acoplado, descripcion)
-values	(0, 'sin acoplado'),
-		(101, 'acoplado1'),
-		(201, 'acoplado2'),
-		(301, 'acoplado3'),
-		(401, 'acoplado4'),
-		(501, 'acolpado5'),
-		(601, 'acoplado6');
+insert into acoplado (id_acoplado, descripcion,paten)
+values	(0, 'sin acoplado',0),
+		(101, 'acoplado1',0),
+		(201, 'acoplado2',0),
+		(301, 'acoplado3',0),
+		(401, 'acoplado4',0),
+		(501, 'acolpado5',0),
+		(601, 'acoplado6',0)
+;
+    
+
+    
     
 /*select *
 from acoplado;*/    
@@ -206,14 +211,25 @@ values	(1122, 10,101, 2222, 'Buenos Aires', 10000, 'Florianopolis', 'Pedromania'
 select *
 from viaje; 
 
+
+/*
+SELECT V.id_viaje id_vi, U.nombre nomb , A.descripcion descrip, T.id_transporte id_trans, 
+														V.origen, V.destino, V.cliente, V.fecha_inicio, V.carga 
+													   FROM viaje V inner join 
+															usuario U on V.id_usuario = U.id_usuario inner join 
+															acoplado A on V.id_acoplado = A.id_acoplado inner join 
+															transporte T on V.id_transporte = T.id_transporte; 
+
+*/
+
 insert into vale_combustible(id_vc,id_viaje,  fecha_hora, lugar, costo, cantidad)
 values (1,1122,'2015-06-05 15:11:25', 'Entre Rios', 5000.00, 250.00),   
        (2,1122,'2015-06-06 07:36:55', 'canasvieiras', 2000.00, 100.00),
 	   (3,3344,'2015-10-11 07:16:45', 'Mendoza', 2600.00, 200.00),
 	   (4,6677,'2015-07-06 15:30:14', 'Buenos Aires', 2250.00, 150.00);
       
-/*select *
-from vale_combustible;*/
+select *
+from vale_combustible;
  
  
 

@@ -29,7 +29,7 @@
 	?>
  	<div id="divContenedor">
  	</br>
- 	<p>DATOS DEL USUARIO A AGREGAR:</p>
+ 	<p>DATOS DEL USUARIO A AGREGAR</p>
 
  	<form class='contacto' method="post" action="<?php echo  $validar_usuario ?>">
  		<div id="contacto">

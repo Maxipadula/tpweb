@@ -3,8 +3,9 @@
  	session_start() ; 
  	 
  	$id_viaj =$_POST ["id_viajes"]; 
- 	$id_usua =$_POST ["id_usuario"]; 
- 	$id_trnsp =$_POST ["id_transpo"]; 
+ 	$id_usua =$_GET ["ID"]; 
+ 	$id_trnsp =$_GET ["ID_TRA"]; 
+	$acoplado =$_GET ["ID_ACO"]; 
  	$orig =$_POST ["origen"]; 
  	$destin =$_POST ["destino"]; 
  	$client =$_POST ["cliente"]; 
@@ -17,9 +18,35 @@
 	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
 	mysql_select_db ("tpFinal",$conexion) or die ("no db");
  	 
-	  $insert_usuario = mysql_query("insert into viaje (id_viaje, id_usuario, id_transporte, origen, km_recorridos, destino, cliente, fecha_inicio, fecha_fin, carga) 
- 									values ('".$id_viaj."','".$id_usua."','".$id_trnsp."','".$orig."','0','".$destin."','".$client."', '".$fecha_inic."','0000-00-00 00:00:00', '".$carg."')  
+	  $insert_usuario = mysql_query("insert into viaje (id_viaje, id_usuario,id_acoplado, id_transporte, origen, km_recorridos, destino, cliente, fecha_inicio, fecha_fin, carga) 
+ 									values ('".$id_viaj."','".$id_usua."','".$id_trnsp."','".$acoplado."','".$orig."','0','".$destin."','".$client."', '".$fecha_inic."','0000-00-00 00:00:00', '".$carg."')  
  										    ;")or die (mysql_error()); 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
+	 
 	 
 	 
 	 

@@ -2,9 +2,7 @@
 <body>
 	<?php  include ("mecanicos_datos.php");?>
   <div id="divContenedor">
-
-
-            <div class="divTabla">
+  <div class="divTabla">
 	<?PHP
 
 	

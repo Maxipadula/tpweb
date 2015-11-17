@@ -1,6 +1,19 @@
-
+<html>
+	<head>
+	<meta charset="UTF-8">
+		<title>Agregar User | S.G.L</title>
+		
+		<script type="text/javascript" src="../../../../js/funciones/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="../../../../js/funciones/validarModificarUsuarios.js"></script>
+		
+		<LINK REL="Stylesheet" HREF="../Css/login.css" TYPE="text/css">
+	</head>
+	
+	
 	
 	 <?php include ("usuarios_datos.php"); ?>
+	 
+	 <div id="divContenedor">
 	<?php 
 	
 	if(!isset($_SESSION)){
@@ -18,7 +31,7 @@
 	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 			
 		
-		echo "<form class='chequeado' method='post' action=". $ingresar_modificaciones_usuario.">";
+		echo "<form class='chequeado' method='post' action=". $ingresar_modificaciones_viaje.">";
 		
 		ifs('usuario');
 		ifs('nombre');
@@ -51,11 +64,15 @@
           <option value='supervisor'>Supervisor</option>
           </select>"
 		;}
-		
+				echo "<br>";
 		
 		echo "</br> <input type='submit' value='Enviar'/>
 							<input type='reset' value='Borrar'/>
 							<input type='button' onclick='history.back()' name='volver atrás' value='Volver'></form> ";
+		
+		
+		
+		
 		
 		function ifs ($check){
 		
@@ -66,7 +83,7 @@
 						</br>
 						<input type='text' name='".$check."'>
 						
-					</div>
+			
 					
 					</br>";
 				};
@@ -85,7 +102,8 @@
 			}
         return false;
         }
-		
+
 	
 	?>
-
+	</div>
+</html>

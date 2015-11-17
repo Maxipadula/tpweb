@@ -1,5 +1,5 @@
 <html>
-	SELECCIONAR EL MECANICO QUE QUIERAS ELIMINAR
+
 	<?php include ("viajes_datos.php"); ?>
 	
 	<head>
@@ -10,7 +10,10 @@
 	
 	
 	<div id="divContenedor">
-	<div class="divTabla">	
+	<div class="divTabla">
+	SELECCIONAR EL MECANICO QUE QUIERAS ELIMINAR
+		<br>
+		<br>
 	<?php
 		
 			include ('../rutas.php');

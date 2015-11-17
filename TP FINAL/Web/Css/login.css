@@ -191,6 +191,18 @@ table tr td.tBotonELim:hover {
     cursor: pointer;
 }
 
+table tr td.tBotonAgregar {
+    vertical-align: middle;
+    text-align: center;
+    width: 125px;
+    background-color: #5757DC;
+}
+
+table tr td.tBotonAgregar:hover {
+    background-color: #5757DC;
+    cursor: pointer;
+}
+
 table tr td.tBotonModif {
     vertical-align: middle;
     text-align: center;

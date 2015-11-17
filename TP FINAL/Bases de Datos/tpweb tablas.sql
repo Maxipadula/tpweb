@@ -131,7 +131,8 @@ create table if not exists vehiculo
 
 create table if not exists acoplado 
 	(id_acoplado int primary key,
-	 descripcion varchar (30)
+	 descripcion varchar (30),
+     paten varchar (30) 
 
 );
 

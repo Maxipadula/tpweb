@@ -23,19 +23,22 @@
 			
 			$id_viaje +=1;
 	?>
- 	FORMULARIO PARA TABLA VIAJES:
+
 	
 	<div id="divContenedor">
 	<div class="divTabla">
+	 FORMULARIO PARA TABLA VIAJES
  	<form class='contacto' method="post" action="<?php echo $validar_datos_viaje ?>">
  		<div id="contacto">
  				</br>
+				
  				<div><label>ID
 					</br>
 					<input type="text" name="id_viajes"  value="<?php echo $id_viaje?>"readonly = "readonly">
  				</label>
  				</div>	
  				</br>
+				
 			<?php	
 		
 				$consulta  = mysql_query ("SELECT id_usuario, nombre
@@ -46,21 +49,23 @@
 				echo "<table border = '1'> \n";
 				echo "<tr><td>id_usuario</td><td>Nombre y Apellido</td></tr> \n";
 				do{
-					echo "<tr><td>".$row["id_usuario"]."</td><td>".$row["nombre"]."</td></tr> \n";     
-				} while ($row = mysql_fetch_array ($consulta));
+					echo "<tr><td>".$row["id_usuario"]."</td><td>".$row["nombre"].
+					"</td><td class='tBotonAgregar'><a href='".$validar_datos_viaje."?ID=".$row["id_usuario"]
+				."' class = 'tlink'>Seleccionar</a></td></tr> \n";     
+				} while ($row = mysql_fetch_array ($consulta));			
 				echo "</table> \n";
 				} else {
 				echo "no se encontraron ningun registro";
 				} 
 			?>
 				<br>
- 				<div><label>ID USUARIO
+ 				<!--<div><label>ID USUARIO
  					</br>
  					<input type="text" name="id_usuario">
  				</label>
  				</div>
  				</br>
-				
+				-->
 				<?php	
 	
 				$consulta  = mysql_query ("SELECT t.id_transporte id, t.patente patente,M.descripcion marca,MO.descripcion modelo
@@ -73,23 +78,57 @@
 				echo "<table border = '1'> \n";
 				echo "<tr><td>id_transporte</td><td>patente</td><td>vehiculo</td></tr> \n";
 				do{
-					echo "<tr><td>".$row["id"]."</td><td>".$row["patente"]."</td><td>".$row["marca"]."  ".$row["modelo"]."</td></tr> \n"; 
+					echo "<tr><td>".$row["id"]."</td><td>".$row["patente"]."</td><td>".$row["marca"]."  ".$row["modelo"].
+					"</td><td class='tBotonAgregar'><a href='".$validar_datos_viaje."?ID_TRA=".$row["id"]."' class = 'tlink'>Seleccionar</a></td></tr> \n"; 
 					
 				} while ($row = mysql_fetch_array ($consulta));
+					
 				echo "</table> \n";
 				} else {
 				echo "no se encontraron ningun registro";
 				} 
 			?>
 				
-				<br>
+				<!--<br>
  				<div><label>ID TRANSPORTE
  					</br>
  					<input type="text" name="id_transpo">
  				</label>
  				</div>
  				</br>
+				-->
 				
+				
+				
+				
+				
+				
+				
+				
+				
+				</br>
+				
+				<?php	
+				
+				$consulta_acoplado  = mysql_query ("SELECT id_acoplado id_aco, descripcion descr, paten 
+													FROM acoplado
+													") or die ("no qaaaaa");
+			
+				if ($row = mysql_fetch_array($consulta_acoplado)){
+				echo "<table border = '1'> \n";
+				echo "<tr><td>id_acoplado</td><td>descripcion</td><td>patente</td></tr> \n";
+				do{
+					echo "<tr><td>".$row["id_aco"]."</td><td>".$row["descr"]."</td><td>".$row["paten"].
+					"</td><td class='tBotonAgregar'> <a href='".$validar_datos_viaje."?ID_ACO=".$row["id_aco"]."' class = 'tlink'>Seleccionar</a></td></tr> \n"; 
+					
+				} while ($row = mysql_fetch_array ($consulta_acoplado));
+				echo "</table> \n";
+				} else {
+				echo "no se encontraron ningun registro";
+				} 
+			?>
+
+				</br>
  				<div><label>ORIGEN
  					</br>
  					<input type="text" name="origen">
