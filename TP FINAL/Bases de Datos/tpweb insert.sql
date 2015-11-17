@@ -52,8 +52,11 @@ values ('A1', 'Motos de 2 ruedas hasta 50cc'),
 	   ('G.2', 'Maquinaria Especial Agricola'),
        ('NO', 'NO tiene registro');
 
-/*select *
-from dar_permiso;*/
+/*SELECT R.descripcion rol,P.descripcion permiso
+											        FROM rol R inner join 
+											            dar_permiso DP on R.codigo_rol = DP.codigo_rol inner join
+												        permiso P on P.id_permiso = DP.id_permiso
+											        WHERE DP.codigo_rol = '1'*/
 
 insert into permiso(id_permiso, descripcion)
 	values(1,'chofer home'),
@@ -77,25 +80,25 @@ insert into permiso(id_permiso, descripcion)
 									WHERE R.descripcion = 'chofer'*/
 
           
-insert into dar_permiso(id_permiso,codigo_rol)
-	values(1,1),
-		  (2,1),
-		  (3,1),
-          (4,2),
-          (5,3),
-          (6,2),
-          (8,2),
-          (9,2),
-          (10,2),
-          (11,3),
-		  (12,3),
-		  (7,3),
-          (13,2),
-		  (7,2);
+insert into dar_permiso(id_permiso,codigo_rol,id_dp)
+	values(1,1,1),
+		  (2,1,2),
+		  (3,1,3),
+          (4,2,4),
+          (5,3,5),
+          (6,2,6),
+          (8,2,7),
+          (9,2,8),
+          (10,2,9),
+          (11,3,10),
+		  (12,3,11),
+		  (7,3,12),
+          (13,2,13),
+		  (7,2,14);
           
 
 /*select * 
-from usuario
+from dar_permiso
 ;*/
 
 insert into usuario (id_usuario, usuario, nombre, pass, fecha_nacimiento, id_tipo_doc, num_doc, id_licencia, codigo_rol)

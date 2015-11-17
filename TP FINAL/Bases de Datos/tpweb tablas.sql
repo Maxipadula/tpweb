@@ -30,6 +30,7 @@ create table if not exists licencia
   create table if not exists dar_permiso
     (id_permiso int ,
      codigo_rol int,
+     id_dp int primary key,
      CONSTRAINT id_permiso_rol FOREIGN KEY (codigo_rol) REFERENCES rol (codigo_rol)
 	 ON DELETE CASCADE
 	 ON UPDATE CASCADE,

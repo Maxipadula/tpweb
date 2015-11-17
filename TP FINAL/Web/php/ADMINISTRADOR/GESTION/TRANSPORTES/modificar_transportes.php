@@ -28,20 +28,7 @@
 			echo "<table border = '1'> \n";
 			echo "<tr><td>MARCA</td><td>MODELO</td><td>PATENTE</td><td>ESTADO</td><td>KM RECORRIDOS</td><td>NUMERO DE CHASIS</td><td>NUMERO DE MOTOR</td></tr>\n";
 			do{
-				echo "<tr><td>".$row["marca"]."</td><td>".$row["modelo"]."</td><td>".$row["patente"]."</td><td>".$row["estado"]."</td><td>".$row["km"].".KM</td><td>".$row["chasis"]."</td><td>".$row["motor"]."</td><td class='tBotonModif'><a href='".$menu_modificacion_transporte ."?ID=".$row["ID"]."' class = 'tLink' >"
-			echo "
-				</br>
-					<select name='estado'>    
-						".<?php $consulta_estado= mysql_query ("SELECT descripcion FROM estado");?>."
-						".<?php while ( $row2 = mysql_fetch_array($consulta_estado) )
-						{ ?>."				
-				  	<option value=".<?php echo $row2["descripcion"] ?>." >
-					".<?php echo $row2["descripcion"]; ?>."
-				  	</option>
-			    	".<?php } ?>."
-			    	</select>
-			    </label>";
-		}"</a></td></tr> \n";     
+				echo "<tr><td>".$row["marca"]."</td><td>".$row["modelo"]."</td><td>".$row["patente"]."</td><td>".$row["estado"]."</td><td>".$row["km"].".KM</td><td>".$row["chasis"]."</td><td>".$row["motor"]."</td><td class='tBotonModif'><a href='".$menu_modificacion_transporte ."?ID=".$row["ID"]."' class = 'tLink' >".menu()."</a></td></tr> \n";     
 			} while ($row = mysql_fetch_array($consulta_transporte));
 			echo "</table> \n";
 			
@@ -50,9 +37,6 @@
 			echo "<h3> No se encontraron registros </h3>";
 		} 
 		
-		function menu(){
-			
-				
 	
 	?>
 </div>

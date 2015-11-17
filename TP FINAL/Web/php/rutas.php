@@ -4,7 +4,7 @@
 	
 	$puerto = "localhost:3306";
 	$usuario = "root";
-	$password = "Unlm2015";
+	$password = "";
 	
 	/*VARIABLES RUTAS*/
 	$login = "login.php";
@@ -73,6 +73,7 @@
 			 $validar_asignar_permiso ="validar_asignar_permiso.php";
 			 $eliminar_permiso="eliminar_permiso.php";
 			 $ingresar_modificaciones_usuario="ingresar_modificaciones_usuario.php";
+			 $validar_eliminacion_permiso = "validar_eliminacion_permiso.php";
 			 
 			 
 			 //gestion de vehiculos

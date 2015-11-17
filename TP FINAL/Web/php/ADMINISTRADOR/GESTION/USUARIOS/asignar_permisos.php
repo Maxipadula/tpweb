@@ -1,8 +1,7 @@
  <html>
  <?php include ("permisos_datos.php"); ?>
 	<?PHP
-		session_start();
-		
+				
 				include ('../../../rutas.php');
 	
 	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");

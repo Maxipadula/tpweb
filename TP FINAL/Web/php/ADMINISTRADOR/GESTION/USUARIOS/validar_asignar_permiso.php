@@ -2,8 +2,6 @@
 <?php
 
 
-	session_start();
-	
 	$permiso = $_POST["permiso"];
 	$rol = $_POST["rol"];
 
@@ -16,14 +14,14 @@
 								from rol
 								where descripcion = '".$rol."'") or die (mysql_error());
 	
-	$fila1 = mysql_fetch_assoc($consulta1) or die ("cuac");
+	$fila1 = mysql_fetch_assoc($consulta1) or die (mysql_error());
 	
 	$consulta2 = mysql_query(" select id_permiso id
 								from permiso
 								where descripcion = '".$permiso."'") or die (mysql_error());
 								
 	
-	$fila2 = mysql_fetch_assoc($consulta2) or die ("cuac");
+	$fila2 = mysql_fetch_assoc($consulta2) or die (mysql_error());
 	
 	$cod_rol = $fila1["codigo"];
 	$id_permiso = $fila2["id"];

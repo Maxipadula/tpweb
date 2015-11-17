@@ -6,6 +6,10 @@
 		
 		<script type="text/javascript" src="../../../../js/funciones/jquery-1.11.3.min.js"></script>
 		<script type="text/javascript" src="../../../../js/funciones/validarAgregarTransporte.js"></script>
+		
+				
+		
+					
     </head>
     <body>
         <?php include ("transportes_datos.php"); ?><?php       
@@ -33,6 +37,9 @@
                             
                             
                     ?>
+					
+			
+		
         <div id="divContenedor">
             
             <p>AGREGAR TRANSPORTES:</p>
@@ -75,7 +82,7 @@
                     <div>
                         <label>MARCA</label>
                     </br>
-                        <select name="marca_transporte" id="marca">
+                        <select name="marca_transporte" id="marca_transporte">
                         </br>
                             <option selected="selected" value="nada">Seleccione Marca
                                 </option>
@@ -100,12 +107,26 @@
                                                                     </option>
                         </select>
                     </div>
+								<script language="javascript">
+						
+						$(document).ready(function(){
+						   $("#marca_transporte").change(function () {
+								   $("#marca_transporte option:selected").each(function () {
+									descripcion = $(this).val();
+									$.post("modelo_transporte.php", { descripcion: descripcion }, function(data){
+										$("#modelo_transporte").html(data);
+									});            
+								});
+						   })
+						});
+					</script>
+					
                     <div id="mensaje2" class="errores"> Ingrese una opcion</div>
                     </br>
                     <div>
                         <label>MODELO</label>
                         	</br>
-                         <select name="modelo_transporte" id="modelo">
+                         <select name="modelo_transporte" id="modelo_transporte">
 
                             <option selected="selected" value="nada">Seleccione Modelo
                                 </option><?php                               
