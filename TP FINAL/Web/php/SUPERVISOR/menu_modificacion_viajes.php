@@ -1,11 +1,17 @@
 <html>
  <?php include ("viajes_datos.php"); ?>
 <head>
+
+		<LINK REL="Stylesheet" HREF="../Css/login.css" TYPE="text/css">
+	
 </head>
 <body>
-	<?php $id = $_GET["ID"]?>
+	<?php $id = $_POST["viaje"]?>
 	
 	<div id="divContenedor">
+	
+	<div class="divTabla">
+		
 	 	<h2>MODIFICAR VIAJES</H2>
 		<p>Que dato desea modificar?</p>
 
@@ -24,7 +30,7 @@
 			<br>
 			<input type="checkbox" name="datos[]" value="acoplado">ACOPLADO</input>
 			<br>
-			<input type="checkbox" name="datos[]" value="trasnporte">TRANSPORTE</input>
+			<input type="checkbox" name="datos[]" value="transporte">TRANSPORTE</input>
 			<br>
 			<input type="checkbox" name="datos[]" value="origen">ORIGEN</input>
 			<br>
@@ -42,6 +48,7 @@
 			<input type="button" onclick="history.back()" name="volver atrás" value="Volver" class="boton"/>
 	
 		</form>
+	</div>
 	</div>
 </body>
 </html>
