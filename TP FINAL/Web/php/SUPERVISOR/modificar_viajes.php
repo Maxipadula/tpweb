@@ -15,7 +15,7 @@
 	 	<p>SELECCIONE VIAJE A MODIFICAR</p>
  
 		
-		<form class='contacto' method="post" action="<?php echo $usuario_a_modificar ?>">
+		<form class='contacto' method="post" action="<?php echo $menu_modificacion_viajes?>">
 			<div id="contacto">
 		
 		
@@ -36,13 +36,13 @@
 			
 			if ($row = mysql_fetch_array($consulta_viaje_modificar)){
 			echo "<table border = '1'> \n";
-			echo "<tr><td>ID</td><td>NOMBRE</td><td>ACOPLADO</td><td>TRANSPORTE</td><td>ORIGEN</td><td>
+			echo "<tr><td>NOMBRE</td><td>ACOPLADO</td><td>TRANSPORTE</td><td>ORIGEN</td><td>
 			DESTINO</td><td>CLIENTE</td><td>FECHA_I</td><td>CARGA</td></tr> \n";
 			do{
-				echo "<tr><td>".$row["id_vi"]."</td><td>".$row["nomb"]."</td><td>".$row["descrip"]
+				echo "</td><td>".$row["nomb"]."</td><td>".$row["descrip"]
 				."</td><td>".$row["id_trans"]."</td><td>".$row["ori"]."</td><td>".$row["dest"]
 				."</td><td>".$row["cli"]."</td><td>".$row["fecha"]."</td><td>".$row["carg"]
-				."</td><td class='tBotonModif'><a href='".$menu_modificacion_viajes."?ID=".$row["id_vi"]."' class = 'tlink'>Modificar</a></td></tr> \n";     
+				."</td><td><input type='radio' name='viaje' value='".$row["id_vi"]."'></input><br></td></tr> \n";     
 			} while ($row = mysql_fetch_array ($consulta_viaje_modificar));
 			echo "</table> \n";
 		} else {
@@ -50,7 +50,8 @@
 		} 
 		
 			?>
-		
+			<BR>				
+			<input type="submit" value="Seleccionar">
 		
 			</div>
 		</form>

@@ -1,8 +1,10 @@
-
+	<?php include ("viajes_datos.php"); ?>
 	
-	 <?php include ("viajes_datos.php"); ?>
+	
+	 <div id="divContenedor">
+	 
+	 	<div class="divTabla">
 	<?php 
-	
 	
 	if(!isset($_SESSION)){
 		session_start();
@@ -13,48 +15,98 @@
 	
 
  		
- 		include ('../../../rutas.php');
+ 		include ('../rutas.php');
 	
 	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
 	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 			
+
+		echo "<form class='chequeado' method='post' action=". $ingresar_modificaciones_viajes3.">";
 		
-		echo "<form class='chequeado' method='post' action=". $ingresar_modificaciones_viaje.">";
-		
-		ifs('nombre');
+		ifs('origen');
+		ifs('destino');
+		ifs('cliente');
+		ifs('fecha_inicio');
+		ifs('carga');
 	
+		
+		  if(chequeado('nombre')){
+		
+			echo "</br>Nombre</br>";
+	
+			$consulta_id_usuario  = mysql_query ("SELECT id_usuario id, usuario usu 
+												  FROM usuario 
+												") or die (mysql_error());
+												
+			if ($row = mysql_fetch_array($consulta_id_usuario)){
+				echo "<table border = '1'> \n";
+				echo "<tr><td>ID USUARIO</td><td>USUARIO</td></tr>\n";
+				do{
+					echo "</td><td>".$row["id"]."</td><td>".$row["usu"]
+				."</td><td><input type='radio' name='nombre' value='".$row["id"]."'></input><br></td></tr> \n";     
+				} while ($row = mysql_fetch_array ($consulta_id_usuario));
+				echo "</table> \n";
+			
+			
+				} else {
+					echo "no se encontraron ningun registro";
+				} 	
+				
+			}
+		
+		
 		
 		  if(chequeado('acoplado'))
 		{
-		echo "</br>Acoplado</br>
-		  <select name='acoplado'>    
-		  <option value='sin_acoplado' selected='selected'>Chofer</option>
-        <option value='acoplado1'>acoplado1</option>
-        <option value='acoplado2'>acoplado2</option>
-        <option value='acoplado3'>acoplado3</option>		 
-        <option value='acoplado4'>acoplado4</option>
-	    <option value='acoplado5'>acoplado5</option>
-        <option value='acoplado6'>acoplado6</option>
-          </select>"
-		;}
+		echo "</br>Acoplado</br>";
+		
+		$consulta_id_acoplado  = mysql_query ("SELECT id_acoplado id, descripcion descri
+												  FROM acoplado 
+												") or die (mysql_error());
+												
+			if ($row = mysql_fetch_array($consulta_id_acoplado)){
+				echo "<table border = '1'> \n";
+				echo "<tr><td>ID ACOPLADO</td><td>DESCRIPCION</td></tr>\n";
+				do{
+					echo "</td><td>".$row["id"]."</td><td>".$row["descri"]
+				."</td><td><input type='radio' name='acoplado' value='".$row["id"]."'></input><br></td></tr> \n";     
+				} while ($row = mysql_fetch_array ($consulta_id_acoplado));
+				echo "</table> \n";
+			
+			
+				} else {
+					echo "no se encontraron ningun registro";
+				} 
+		
 
-		  if(chequeado('transporte'))
+		}
+		
+		
+		if(chequeado('transporte'))
 		{
-		echo "</br>Transporte</br>
-		  <select name='transporte'>    
-		  <option value='1111' selected='selected'>1111</option>
-        <option value='2222'>2222</option>
-        <option value='3333'>3333</option>
-        <option value='4444'>4444</option>		 
-        <option value='5555'>5555</option>
-	    <option value='6666'>6666</option>
-        <option value='7777'>7777</option>
-        <option value='8888'>8888</option>
-          </select>"
-		;}
+		echo "</br>Transporte</br>";
 		
+		$consulta_id_transporte  = mysql_query ("SELECT T.id_transporte id, E.descripcion descri, T.patente pate
+												  FROM transporte T  inner join 
+													   estado E on T.id_Estado = E.id_estado
+												") or die (mysql_error());
+												
+			if ($row = mysql_fetch_array($consulta_id_transporte)){
+				echo "<table border = '1'> \n";
+				echo "<tr><td>ID TRANSPORTE</td><td>DESCRIPCION</td><td>patente</td></tr>\n";
+				do{
+					echo "</td><td>".$row["id"]."</td><td>".$row["descri"]."</td><td>".$row["pate"]
+					."</td><td><input type='radio' name='transporte' value='".$row["id"]."'></input><br></td></tr> \n";     
+				} while ($row = mysql_fetch_array ($consulta_id_transporte));
+				echo "</table> \n";
+			
+			
+				} else {
+					echo "no se encontraron ningun registro";
+				} 
 		
-		
+
+		}
 		
 		
 		
@@ -72,7 +124,7 @@
 						</br>
 						<input type='text' name='".$check."'>
 						
-					</div>
+			
 					
 					</br>";
 				};
@@ -94,3 +146,9 @@
 		
 	
 	?>
+		
+	</div>
+	</div>
+	</html>
+	
+	

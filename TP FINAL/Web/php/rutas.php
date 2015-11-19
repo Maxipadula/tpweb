@@ -36,7 +36,9 @@
 		$agregar_viaje ="agregar_viajes.php";
 		$modificar_viaje ="modificar_viajes.php";
 		$menu_modificacion_viajes="menu_modificacion_viajes.php";
-		$ingresar_modificaciones_viaje="ingresar_modificaciones_viaje.php";
+		//$ingresar_modificaciones_viaje="ingresar_modificaciones_viaje.php";
+		$menu_modificacion_viajes2="menu_modificacion_viajes2.php";
+		$ingresar_modificaciones_viajes3="ingresar_modificaciones_viajes3.php";
 		$eliminar_viaje="eliminar_viajes.php";
 		$validar_eliminacion_viaje ="validar_eliminacion_viaje.php";
 		$validar_datos_viaje ="validar_datos_viajes.php";
