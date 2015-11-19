@@ -31,7 +31,7 @@
 	mysql_select_db ("tpFinal",$conexion) or die ("no db");
 			
 		
-		echo "<form class='chequeado' method='post' action=". $ingresar_modificaciones_viaje.">";
+		echo "<form class='chequeado' method='post' action=". $ingresar_modificaciones_usuario.">";
 		
 		ifs('usuario');
 		ifs('nombre');

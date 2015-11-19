@@ -13,10 +13,13 @@
 		$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
 	     mysql_select_db ("tpFinal",$conexion) or die ("no db");
 	
-	$id_transporte = $_GET["ID"];
+	   $id_transporte = $_POST["transporte"];
+	   $estado = $_POST["estado"];
 	
+	$update = mysql_query ("UPDATE transporte
+							SET id_estado = '".$estado."'
+							WHERE id_transporte = '".$id_transporte."'")or die(mysql_error());
+							
 	
-	if (isset ($id_transporte)){
-		$update_transporte = mysql_query("UPDATE usuario
-									   SET nombre ='".$_POST["nombre"]."'
-									   WHERE id_usuario = '".$id_usuario."'")or die (mysql_error());
+	echo"modificacion terminada";
+	?>								  

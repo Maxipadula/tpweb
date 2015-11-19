@@ -23,22 +23,46 @@
 											      marca M on V.id_marca = M.id_marca inner join 
 											      modelo MO on V.id_modelo = MO.id_modelo")or die (mysql_error());
 		
-		
+		echo "<form class='chequeado' method='post' action=". $validar_modificacion_transportes.">";
 			if ($row = mysql_fetch_array($consulta_transporte)){
 			echo "<table border = '1'> \n";
 			echo "<tr><td>MARCA</td><td>MODELO</td><td>PATENTE</td><td>ESTADO</td><td>KM RECORRIDOS</td><td>NUMERO DE CHASIS</td><td>NUMERO DE MOTOR</td></tr>\n";
+			
 			do{
-				echo "<tr><td>".$row["marca"]."</td><td>".$row["modelo"]."</td><td>".$row["patente"]."</td><td>".$row["estado"]."</td><td>".$row["km"].".KM</td><td>".$row["chasis"]."</td><td>".$row["motor"]."</td><td class='tBotonModif'><a href='".$menu_modificacion_transporte ."?ID=".$row["ID"]."' class = 'tLink' >"Moi"</a></td></tr> \n";     
+				echo "<tr><td>".$row["marca"]."</td><td>".$row["modelo"]."</td><td>".$row["patente"]."</td><td>".$row["estado"]."</td><td>".$row["km"].".KM</td><td>".$row["chasis"]."</td><td>".$row["motor"]."</td><td class='tBotonModiff'><input type='radio' name='transporte' value='".$row["ID"]."'></input><br></tr> \n";     
 			} while ($row = mysql_fetch_array($consulta_transporte));
 			echo "</table> \n";
-			
+			 
 			
 		} else {
 			echo "<h3> No se encontraron registros </h3>";
 		} 
 		
+		
 	
 	?>
+	<td>    <select name='estado' id='estado'>
+                            <option selected='selected' value='nada'> Seleccione Estado
+                                </option>
+                            <option value='mm'>
+                                Muy Malo
+                            </option>
+                            <option value='m'>
+                                Malo
+                            </option>
+                            <option value='r'>
+                                Regular
+                            </option>
+                            <option value='b'>
+                                Bueno
+                            </option>
+                            <option value='mb'>
+                                Muy Bueno
+                            </option>
+                        </select></td>
+						
+	<input type="submit" value="Seguir" class="boton" id="boton">
+	</form>
 </div>
 </div>
 </body>	

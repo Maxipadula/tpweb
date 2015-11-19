@@ -117,6 +117,7 @@
 			   //graficos
 			   $graficos = "GRAFICOS";
 			   $graficos_datos = "graficos_datos.php";
+			   $rendimiento_km = "rendimiento_km.php";
 			   
 				
 	

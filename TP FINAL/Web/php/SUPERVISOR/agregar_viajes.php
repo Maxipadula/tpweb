@@ -47,9 +47,9 @@
 			
 				if ($row = mysql_fetch_array($consulta)){
 				echo "<table border = '1'> \n";
-				echo "<tr><td>id_usuario</td><td>Nombre y Apellido</td></tr> \n";
+				echo "<tr><td>Nombre y Apellido</td></tr> \n";
 				do{
-					echo "<tr><td>".$row["id_usuario"]."</td><td>".$row["nombre"].
+					echo "<tr><td>".$row["nombre"].
 					"</td><td class='tBotonAgregar'><a href='".$validar_datos_viaje."?ID=".$row["id_usuario"]
 				."' class = 'tlink'>Seleccionar</a></td></tr> \n";     
 				} while ($row = mysql_fetch_array ($consulta));			
@@ -76,9 +76,9 @@
 			
 				if ($row = mysql_fetch_array($consulta)){
 				echo "<table border = '1'> \n";
-				echo "<tr><td>id_transporte</td><td>patente</td><td>vehiculo</td></tr> \n";
+				echo "<tr><td>patente</td><td>vehiculo</td></tr> \n";
 				do{
-					echo "<tr><td>".$row["id"]."</td><td>".$row["patente"]."</td><td>".$row["marca"]."  ".$row["modelo"].
+					echo "<tr><td>".$row["patente"]."</td><td>".$row["marca"]."  ".$row["modelo"].
 					"</td><td class='tBotonAgregar'><a href='".$validar_datos_viaje."?ID_TRA=".$row["id"]."' class = 'tlink'>Seleccionar</a></td></tr> \n"; 
 					
 				} while ($row = mysql_fetch_array ($consulta));
@@ -116,9 +116,9 @@
 			
 				if ($row = mysql_fetch_array($consulta_acoplado)){
 				echo "<table border = '1'> \n";
-				echo "<tr><td>id_acoplado</td><td>descripcion</td><td>patente</td></tr> \n";
+				echo "<tr><td>descripcion</td><td>patente</td></tr> \n";
 				do{
-					echo "<tr><td>".$row["id_aco"]."</td><td>".$row["descr"]."</td><td>".$row["paten"].
+					echo "<tr><td>".$row["descr"]."</td><td>".$row["paten"].
 					"</td><td class='tBotonAgregar'> <a href='".$validar_datos_viaje."?ID_ACO=".$row["id_aco"]."' class = 'tlink'>Seleccionar</a></td></tr> \n"; 
 					
 				} while ($row = mysql_fetch_array ($consulta_acoplado));

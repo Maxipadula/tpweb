@@ -154,7 +154,7 @@
                     <div>
                         <label>KM RECORRIDOS</label>
                     </br>
-                        <input name="patente" type="text" id="kmreco" placeholder="Km Recorridos">
+                        <input name="km" type="text" id="kmreco" placeholder="Km Recorridos">
                         <div id="mensaje8" class="errores">Ingrese solo numeros</div>
                     </div>
                     </br>
