@@ -119,17 +119,17 @@ values	(10, 'pato','Patricio Lombardia','1234asd','1965-10-23', 1, '302584789', 
 											rol R on R.codigo_rol = U.codigo_rol */
 
 /*select *
-from usuario; */
-
+from usuario; 
+*/
 insert into modelo (id_modelo, descripcion)
 values	(100, 'HD 78'),
 		(200, 'HD 65'),
 		(500, 'Oln 2.5 CS'),
 		(600, 'Maxity');
-        
-/*select *
-from modelo;*/
 
+/*select *
+from modelo;
+*/
 
 insert into estado (id_estado, descripcion)
 	values('mm','muy malo'),
@@ -146,16 +146,20 @@ values (1, 'Hyundai'),
        (4, 'Renault');
        
 /*select *
-from vehiculo;*/
-       
+from marca;
+   */    
+/*select *
+from vehiculo;
+  */     
 insert into vehiculo (id_vehiculo, id_modelo, id_marca,capacidad_carga)
 values  (123, 100, 1,5225.00),
         (456, 200, 1,4200.00),
         (789, 500, 2, 2500.00),
         (147, 600, 4,5000.00);
 
-
-
+/*select * 
+from vehiculo;
+*/
 insert into transporte (id_transporte, id_estado, id_vehiculo, num_chasis, num_motor, anio_fabricacion,patente,km_recorridos)
 values	(1111, 'b', 123, 236589, 147852, 2005,'fkn 106',100000),
         (2222, 'mb', 123, 963258, 852147, 2013,'fmj 750',20000),
@@ -166,9 +170,9 @@ values	(1111, 'b', 123, 236589, 147852, 2005,'fkn 106',100000),
         (7777, 'mb',147, 134679, 976431, 2013,'oki 435',25000),
         (8888, 'r',789, 1357913, 791357, 2014,'dma 124',15000);
         
-select *
+/*select *
 from transporte;
- 
+ */
 /*SELECT T.id_transporte, M.descripcion Marca, MO.descripcion Modelo, num_chasis NroChasis, num_motor, anio_fabricacion, patente
 										  FROM transporte T inner join 
 											   
@@ -208,9 +212,9 @@ values	(1122, 10,101, 2222, 'Buenos Aires', 10000, 'Florianopolis', 'Pedromania'
 		(5566, 30,0, 3333, 'Misiones', 4000, 'Montevideo','sisis', '2015-12-12 12:30:34', '2015-12-12 16:30:00','medias'),
 		(6677, 50,601, 4444, 'Mendoza',  8500, 'Asuncion','nadanada', '2015-07-06 12:00:20', '2015-07-06 20:40:29','buzos');
 
-select *
+/*select *
 from viaje; 
-
+*/
 
 /*
 SELECT V.id_viaje id_vi, U.nombre nomb , A.descripcion descrip, T.id_transporte id_trans, 
@@ -228,9 +232,9 @@ values (1,1122,'2015-06-05 15:11:25', 'Entre Rios', 5000.00, 250.00),
 	   (3,3344,'2015-10-11 07:16:45', 'Mendoza', 2600.00, 200.00),
 	   (4,6677,'2015-07-06 15:30:14', 'Buenos Aires', 2250.00, 150.00);
       
-select *
+/*select *
 from vale_combustible;
- 
+ */
  
 
 /*select *
@@ -259,9 +263,9 @@ values(990,1,10000),
       (996,7,70000), 
       (997,8,80000); 
       
-select * 
+/*select * 
 from alarmas; 
-      
+  */    
 insert into orden (id_orden,id_repuesto,cantidad)
 values	(1,1,1),
 		(2,2,2),
@@ -284,8 +288,10 @@ values	(001, 'Yanet Rodriguez'),
 		(005, 'Ivan Lomba'),
 		(006, 'Lucrecio Lunch');
         
-     
         
+/*select * 
+from mecanico;
+  */      
 insert into mecanico_interno (id_mecanico)
 values (001),
 	   (004),
@@ -297,8 +303,8 @@ values (002, 'Jorge Motors'),
 	   (005, 'El taller de Juanca');
         
 /*select * 
-from mecanico;     */
-        
+from mecanico_externo;     
+  */      
 insert into reparacion (codigo_reparacion, id_mecanico, id_transporte,id_orden, costo, fecha)
 values	(123, 006, 5555,1, 15000, '2015-08-06'),
         (124, 006, 5555,2, 4000, '2015-08-06'),
@@ -312,8 +318,8 @@ values	(123, 006, 5555,1, 15000, '2015-08-06'),
 
         
 /*select * 
-from reparacion;*/
-
+from reparacion;
+*/
 insert into alar_transp (id_transporte, id_alarmas, contador)
 values	(1111, 990, 10),
         (1111, 991, 5),
@@ -380,12 +386,12 @@ values	(1111, 990, 10),
 		(8888, 996, 0),
         (8888, 997, 0);
      
-select * 
+/*select * 
 from alar_transp; 
+*/
 
 
-
-select A.id_transporte, A.id_alarmas, AL.kilometros, A.contador
+/*select A.id_transporte, A.id_alarmas, AL.kilometros, A.contador
 											 from alar_transp A inner join
 												  alarmas AL on A.id_alarmas = AL.id_alarmas;
                                                   
@@ -394,3 +400,4 @@ select T.id_transporte transp, T.km_recorridos km, AT.contador cont
 																	  alar_transp AT on T.id_transporte = AT.id_transporte
 																	  inner join alarmas A on A.id_alarmas = AT.id_alarmas;
 
+*/

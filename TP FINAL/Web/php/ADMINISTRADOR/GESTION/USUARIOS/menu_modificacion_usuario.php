@@ -23,8 +23,6 @@
 			<br>
 			<input type="checkbox" name="datos[]" value="password">Password</input>
 			<br>
-			<input type="checkbox" name="datos[]" value="fecha">Fecha de nacimiento</input>
-			<br>
 			<input type="checkbox" name="datos[]" value="licencia">Tipo de Licencia</input>
 			<br>
 			<input type="checkbox" name="datos[]" value="rol">Rol</input>

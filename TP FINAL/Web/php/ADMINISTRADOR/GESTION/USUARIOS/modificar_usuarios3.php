@@ -36,7 +36,7 @@
 		ifs('usuario');
 		ifs('nombre');
 	    ifs('password');
-		ifs('fecha');
+
 		
     if(chequeado('licencia'))
 	{

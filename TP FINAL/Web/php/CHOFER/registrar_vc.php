@@ -23,7 +23,6 @@
 				
 				<form class='contacto' method="post" action="<?php echo $validar_vc?>">
 					<div id="contacto">
-						
 						</br>
 						<div><label>FECHA Y HORA
 							<input type="text" name="fecha_hora_vc">
