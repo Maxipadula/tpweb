@@ -13,7 +13,7 @@
 	
 
  		
- 		include ('../rutas.php');
+ 		include ('../../../rutas.php');
 	
 	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
 	mysql_select_db ("tpFinal",$conexion) or die ("no db");
@@ -28,7 +28,7 @@
 		{
 		echo "</br>Acoplado</br>
 		  <select name='acoplado'>    
-		  <option value='sin_acoplado' selected='selected'></option>
+		  <option value='sin_acoplado' selected='selected'>Chofer</option>
         <option value='acoplado1'>acoplado1</option>
         <option value='acoplado2'>acoplado2</option>
         <option value='acoplado3'>acoplado3</option>		 
