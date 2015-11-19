@@ -49,6 +49,7 @@
 		$reparacion_datos ="reparacion_datos.php";
 		$agregar_reparacion="agregar_reparacion.php";
 		$modificar_reparacion ="modificar_reparacion.php";
+		$validar_modificacion_reparacion="validar_modificacion_reparacion.php";
 		$eliminar_reparacion="eliminar_reparacion.php";
 		$validar_eliminar_reparacion="validar_eliminar_reparacion.php";
 		
