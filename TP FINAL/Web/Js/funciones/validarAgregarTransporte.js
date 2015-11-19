@@ -3,12 +3,34 @@ var expr1 = /^[0-9]*$/;
 var expr2 = /^[a-zA-Z]{3}[0-9]{3}$/;
 
 $(document).ready(function () {
+	 
+	
+    $("#marca_transporte").change(function(){
+		
+		
+		var marca = $("#marca_transporte").val();
+		  
+		  $.ajax({
+			   
+			
+			     url: "modelo_transportes.php",
+				type: "POST",
+				data:'marca='+marca,
+				success: function(a) {
+						  $("#modelo_transporte").html(a);
+						  console.log("ready!");
+							
+					}
+			  
+			}); 
+	});
+
 
     $("#boton").click(function (){
 
         var estado = $("#estado").val();
-        var marca = $("#marca").val();
-        var modelo = $("#modelo").val();
+        var marca = $("#marca_transporte").val();
+        var modelo = $("#modelo_transporte").val();
         var chasis = $("#chasis").val();
         var motor = $("#motor").val();
         var anio = $("#anio").val();
@@ -87,6 +109,8 @@ $(document).ready(function () {
             }
             }
             }
+			 
     });
-    
+	
+
 });

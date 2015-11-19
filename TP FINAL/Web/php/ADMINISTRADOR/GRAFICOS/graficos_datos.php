@@ -29,11 +29,9 @@
            		
 
 		  
-           <li><a href="">VIAJES HECHOS POR MES</a></li>
+           <li><a href="">RENDIMIENTO DE LOS VEHICULOS EN KM</a></li>
 		
-		   <li><a href="">DINERO TOTAL GASTADO EN COMBUSTIBLE</a></li>
-
-		   <li><a href="">KM TOTALES RECORRIDOS </a></li>
+		   <li><a href="">RENDIMIENTO PROMEDIO DE CONSUMO DE COMBUSTIBLE</a></li>
 
 		   <li> <a href="">SALIR</a></li>
 	

@@ -87,19 +87,16 @@
                             <option selected="selected" value="nada">Seleccione Marca
                                 </option>
                                 <?php
-                                                                    
-                                                                    $consulta_marca = mysql_query ("SELECT *
-                                                                                                    FROM marca");
-                                                                    
-                                                                    
-                                                                                                    
-                                                                     ?><?php
-                                                                    while ( $row = mysql_fetch_array($consulta_marca) )
-                                                                    {
+									 $consulta_marca = mysql_query ("SELECT *
+                                                                     FROM marca");
+								?>
+								<?php
+                                       while ( $row = mysql_fetch_array($consulta_marca) )
+                                         {
                                                                         
-                                                                     ?>
+                                  ?>
                             <option value=
-                            " &lt;?php echo $row['descripcion'] ?&gt; ">
+                            " <?php echo $row['id_marca'] ?> ">
                                 <?php echo $row['descripcion']; ?>
                             <?php
                                                                     }
@@ -107,44 +104,17 @@
                                                                     </option>
                         </select>
                     </div>
-								<script language="javascript">
-						
-						$(document).ready(function(){
-						   $("#marca_transporte").change(function () {
-								   $("#marca_transporte option:selected").each(function () {
-									descripcion = $(this).val();
-									$.post("modelo_transporte.php", { descripcion: descripcion }, function(data){
-										$("#modelo_transporte").html(data);
-									});            
-								});
-						   })
-						});
-					</script>
 					
                     <div id="mensaje2" class="errores"> Ingrese una opcion</div>
                     </br>
                     <div>
+					<span class="prueba"></span>
                         <label>MODELO</label>
                         	</br>
                          <select name="modelo_transporte" id="modelo_transporte">
 
-                            <option selected="selected" value="nada">Seleccione Modelo
-                                </option><?php                               
-                                                                    $consulta_modelo = mysql_query ("SELECT descripcion,id_modelo ID
-                                                                                                    FROM modelo");
-                                                                    
-                                                                    ?><?php
-                                                                    while ( $row2 = mysql_fetch_array($consulta_modelo) )
-                                                                    {
-                                                                        
-                                                                    ?>
-                            <option value=
-                            " &lt;?php echo $row2['descripcion'] ?&gt; ">
-                                <?php echo $row2['descripcion']; ?>
-                            <?php
-                                                                    }
-                                                                    ?>
-                         </option>
+                            <option selected="selected" value="nada">Seleccione Marca
+                                </option>
                         </select>
                     </div>
                     <div id="mensaje3" class="errores"> Ingrese una opcion</div>

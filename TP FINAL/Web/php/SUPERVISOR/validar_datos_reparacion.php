@@ -1,54 +1,65 @@
 <html> 
  	<?PHP 
- 	session_start() ; 
+ 	include ("reparacion_datos.php"); 
  	 
- 	$codigo_reparac =$_POST ["cod_reparacion"]; 
- 	$id_mecani =$_POST ["id_mecanico"]; 
- 	$id_transp =$_POST ["id_transporte"]; 
- 	$id_ord =$_POST ["id_orden"]; 
- 	$cost =$_POST ["costo"]; 
+ 	
+ 	$id_mecani =$_POST ["mecanicos"]; 
+ 	$id_transp =$_POST ["transporte"]; 
  	$fech =$_POST ["fecha"]; 
  	 	 
- 		include ('../rutas.php');
+ 	include ('../rutas.php');
 	
 	$conexion = mysql_connect($puerto, $usuario,$password) or die("no conecta");
 	mysql_select_db ("tpFinal",$conexion) or die ("no db"); 
  	 
-	 $insert_reparacion = mysql_query("insert into reparacion (codigo_reparacion, id_mecanico, id_transporte, id_orden, costo, fecha) 
- 									values ('".$codigo_reparac."','".$id_mecani."','".$id_transp."','".$id_ord."', '".$cost."', '".$fech."')  
- 										    ;")or die (mysql_error()); 
-	 
-	 
-	 
- 	/*$consulta2= mysql_query(" SELECT id_tipo_doc tipo 
-                               FROM tipo_doc 
-                               WHERE descripcion = '".$tipo_d."' ") or die ("no q3"); 
- 	 
- 	$fila2 = mysql_fetch_assoc($consulta2); 
- 	$id_tipo_d = $fila2["tipo"]; 
- 	 
- 	 
- 	//echo $id_tipo_d; PARA VER QUE TRAEN
- 							 
- 							 
- 	$consulta1= mysql_query(" SELECT codigo_rol ID 
-                               FROM rol  
-                               WHERE rol.descripcion = '".$rol."' ") or die ("no q2"); 
- 	 
- 	$fila1 = mysql_fetch_assoc($consulta1); 
- 							 
- 	$cod_rol = $fila1["ID"]; 
- 		 					   
-      
- 	//echo $cod_rol; PARA VER QUE TRAEN	 
-       
+
+	
+
+
+	foreach($_POST['repuesto'] as $id_repuesto){
+		
+		$consulta_repuestos = mysql_query("SELECT *
+									       FROM repuesto
+										   WHERE id_repuesto = '".$id_repuesto."'") or die (mysql_error());
+		
+		$repuestos = mysql_fetch_assoc($consulta_repuestos);
+		
+		
+		
+		$consulta_id_orden= mysql_query(" SELECT MAX( id_orden ) ID
+										   FROM orden ") or die ("no query");
+		
+		$orden=mysql_fetch_assoc($consulta_id_orden);
+		$id_orden=$orden["ID"]+1;
+		
+		$cantidad = $_POST[$repuestos["descripcion"]];
+		
+		$costo=$repuestos["costo"]*$cantidad;
+		
+		$insertar_orden=mysql_query("insert into orden (id_orden,id_repuesto,cantidad)
+									values (".$id_orden.",'".$repuestos["id_repuesto"]."','".$cantidad."')")or die(mysql_error());
+		
+		
+		
+		$consulta_id= mysql_query(" SELECT MAX( codigo_reparacion ) IDR
+                                        FROM reparacion ") or die ("no query");
+                             
+			
+		$fila1 = mysql_fetch_assoc($consulta_id);
+			
+		$codigo_reparacion= $fila1["IDR"];
+			
+		$codigo_reparacion +=1;
+		
+		
+		
+		$insertar_reparacion=mysql_query("insert into reparacion (codigo_reparacion, id_mecanico, id_transporte,id_orden, costo, fecha)
+															values	(".$codigo_reparacion.",".$id_mecani.",'".$id_transp."','".$id_orden."', '".$costo."', '".$fech."')")or die(mysql_error());
+	}
+	
   
- 
- 	*/									 
-	echo "<p>Los datos han sido guardados con exito.</p>    
   
- 		<p><a href='javascript:history.go(-1)'>VOLVER ATRÁS</a></p>"; 
- 							 
+	echo "REGISTRO REPARACION EXITOSO";
   
  	?> 
  	 
