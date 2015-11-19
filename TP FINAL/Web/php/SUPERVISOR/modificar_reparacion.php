@@ -31,7 +31,12 @@
 						echo "<table border = '1'> \n";
 						echo "<tr><td>TRANSPORTE</td><td>MECANICO</td><td>FECHA DE REPARACION</td><td>REPUESTO</td><td>CANTIDAD</td><td>COSTO</td></tr>\n";
 						do{
-							echo "<tr><td>".$row["marca"]." ".$row["modelo"]."</td><td>".$row["mecanico"]."</td><td>".$row["fecha"]."</td><td>".$row["repuesto"]."</td><td>".$row["cantidad"]."</td><td>".$row["costo"]."</td><td class='tBotonModif'><a href='".$validar_modificacion_reparacion ."?ID=".$row["ID"]."' class = 'tLink' >Modificar</a></td></tr> \n";     
+							echo "<tr><td>".$row["marca"]." ".$row["modelo"]."</td><td>"
+							.$row["mecanico"]."</td><td>".$row["fecha"]."</td><td>"
+							.$row["repuesto"]."</td><td>".$row["cantidad"]."</td><td>"
+							.$row["costo"]."</td><td class='tBotonModif'>
+							<a href='".$validar_modificacion_reparacion ."?ID=".$row["ID"]
+							."' class = 'tLink' >Modificar</a></td></tr> \n";     
 						} while ($row = mysql_fetch_array($consulta_reparacion));
 						echo "</table> \n";
 						
