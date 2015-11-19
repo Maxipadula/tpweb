@@ -48,6 +48,10 @@
                 <li>
                     <a href="./<?php echo $registrar_datos ?>">GESTIONAR RECURSOS</a>
                 </li>
+				
+				<li>
+                    <a href="./LISTAS/<?php echo $listados_datos ?>">LISTADOS</a>
+                </li>
 
                 <li>
                     <a href="../<?php echo $login ?>">SALIR</a>

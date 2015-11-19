@@ -47,11 +47,10 @@
 			
 				if ($row = mysql_fetch_array($consulta)){
 				echo "<table border = '1'> \n";
-				echo "<tr><td>Nombre y Apellido</td></tr> \n";
+				echo "<tr><td>Chofer</td><td>Seleccionar</td></tr> \n";
 				do{
 					echo "<tr><td>".$row["nombre"].
-					"</td><td class='tBotonAgregar'><a href='".$validar_datos_viaje."?ID=".$row["id_usuario"]
-				."' class = 'tlink'>Seleccionar</a></td></tr> \n";     
+					"</td><td class='tBotonAgregar'><label><input type='radio' name='chofer' value='".$row["id_usuario"]."'></input></label></td></tr> \n";     
 				} while ($row = mysql_fetch_array ($consulta));			
 				echo "</table> \n";
 				} else {
@@ -59,13 +58,7 @@
 				} 
 			?>
 				<br>
- 				<!--<div><label>ID USUARIO
- 					</br>
- 					<input type="text" name="id_usuario">
- 				</label>
- 				</div>
- 				</br>
-				-->
+ 			
 				<?php	
 	
 				$consulta  = mysql_query ("SELECT t.id_transporte id, t.patente patente,M.descripcion marca,MO.descripcion modelo
@@ -76,10 +69,10 @@
 			
 				if ($row = mysql_fetch_array($consulta)){
 				echo "<table border = '1'> \n";
-				echo "<tr><td>patente</td><td>vehiculo</td></tr> \n";
+				echo "<tr><td>patente</td><td>vehiculo</td><td>Seleccionar</td></tr> \n";
 				do{
 					echo "<tr><td>".$row["patente"]."</td><td>".$row["marca"]."  ".$row["modelo"].
-					"</td><td class='tBotonAgregar'><a href='".$validar_datos_viaje."?ID_TRA=".$row["id"]."' class = 'tlink'>Seleccionar</a></td></tr> \n"; 
+					"</td><td class='tBotonAgregar'><label><input type='radio' name='transporte' value='".$row["id"]."'></input></label></td></tr> \n"; 
 					
 				} while ($row = mysql_fetch_array ($consulta));
 					
@@ -88,24 +81,7 @@
 				echo "no se encontraron ningun registro";
 				} 
 			?>
-				
-				<!--<br>
- 				<div><label>ID TRANSPORTE
- 					</br>
- 					<input type="text" name="id_transpo">
- 				</label>
- 				</div>
- 				</br>
-				-->
-				
-				
-				
-				
-				
-				
-				
-				
-				
+
 				</br>
 				
 				<?php	
@@ -116,10 +92,9 @@
 			
 				if ($row = mysql_fetch_array($consulta_acoplado)){
 				echo "<table border = '1'> \n";
-				echo "<tr><td>descripcion</td><td>patente</td></tr> \n";
+				echo "<tr><td>descripcion</td><td>Seleccionar</td></tr> \n";
 				do{
-					echo "<tr><td>".$row["descr"]."</td><td>".$row["paten"].
-					"</td><td class='tBotonAgregar'> <a href='".$validar_datos_viaje."?ID_ACO=".$row["id_aco"]."' class = 'tlink'>Seleccionar</a></td></tr> \n"; 
+					echo "<tr><td>".$row["descr"]."</td><td class='tBotonAgregar'> <input type='radio' name='acoplado' class = 'tlink' value='".$row["id_aco"]."'></a></td></tr> \n"; 
 					
 				} while ($row = mysql_fetch_array ($consulta_acoplado));
 				echo "</table> \n";

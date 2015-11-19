@@ -3,7 +3,9 @@
 <head>
 </head>
 <body>
-	<?php $id = $_GET["ID"]?>
+	<?php $id = $_GET["ID"];
+	 include ('../rutas.php');?>
+	
 	
 	<div id="divContenedor">
 	 	<h2>MODIFICAR VIAJES</H2>
